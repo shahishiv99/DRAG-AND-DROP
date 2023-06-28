@@ -147,10 +147,11 @@ function hideInputBox(column) {
 
 // Allow
 function rebuildArrays() {
-  backlogListArray = [];
-  for (let i = 0; i < backlogListEl.children.length; i++) {
-    backlogListArray.push(backlogListEl.children[i].textContent);
-  }
+  // Using Map
+  backlogListArray = Array.from(backlogListEl.children).map(
+    (i) => i.textContent
+  );
+  // Using For Loop
   progressListArray = [];
   for (let i = 0; i < progressListEl.children.length; i++) {
     progressListArray.push(progressListEl.children[i].textContent);
